@@ -5,6 +5,23 @@ minheaper = {};
 // define insert function for min binary heap
 function minheap_insert(heap, new_element) {
 
+    var l= heap.length;
+	heap[l] = new_element;
+	while(l>2)
+	{var i = Math.floor(l/2);
+	if (heap[l]< heap[i])
+	{
+	      var d= heap[i];
+		heap[i] = heap[l];
+		heap[l] = d;
+		l= i;
+	}}
+		if (heap[l]< heap[0])
+	{
+	      var d= heap[0];
+		heap[0] = heap[l];
+		heap[l] = d;
+	}
     // STENCIL: implement your min binary heap insert operation
 }
 
